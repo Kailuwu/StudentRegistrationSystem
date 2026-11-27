@@ -18,7 +18,7 @@ public class StudentRegistration {
             return name;
         }
 
-        @Override 
+        @Override
         public String toString() {
             return String.format("Name: %s | Age: %d | Grade: %.2f,", name, age, grade);
         }
@@ -32,7 +32,7 @@ public class StudentRegistration {
             return false;
         }
 
-        if(age < 5 || age > 120) {
+        if (age < 5 || age > 120) {
             System.out.println("Error: Age must be between 5 and 120.");
             return false;
         }
@@ -43,9 +43,9 @@ public class StudentRegistration {
         }
 
         String cleanName = name.trim();
-        for (Student student: students) {
+        for (Student student : students) {
             if (student.getName().equalsIgnoreCase(cleanName)) {
-                System.out.println("Error: Student '"+ cleanName +"' is already registered.");
+                System.out.println("Error: Student '" + cleanName + "' is already registered.");
                 return false;
             }
         }
@@ -62,15 +62,18 @@ public class StudentRegistration {
             System.out.println("No students registered.");
             return;
         }
-        for (Student student: students) {
+        for (Student student : students) {
             System.out.println(student);
         }
     }
 
     public static void main(String[] args) {
+        addStudent("", 20, 85);
+        addStudent("John", -5, 85);
+        addStudent("John", 20, 150);
+        addStudent("Maria", 21, 90);
+        addStudent("Maria", 21, 90);
 
-        //Test outputs here
-        
-        display();
+        displayStudents();
     }
 }
